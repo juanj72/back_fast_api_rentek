@@ -5,6 +5,8 @@ from fastapi import APIRouter, HTTPException
 router = APIRouter()
 
 
-@router.get('/')
-async def index():
-    return {'message':'Hello World'}
+@router.get('/{id}')
+async def index(id):
+    message = f'Este es mi id : {id}'
+
+    return {'message':message}

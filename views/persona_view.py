@@ -24,18 +24,29 @@ def create_user(persona: schemas.Persona, db: Session = Depends(get_db)):
     persona_db = crud.get_persona(db,persona.dni)
     if persona_db:
         raise HTTPException(status_code=400, detail="Person already registered")
+    else:
     
-    return crud.created_persona(db=db, persona=persona)
+        return crud.created_persona(db=db, persona=persona)
 
 
-@router.get('/all',response_model=list[schemas.Persona])
+@router.get('/all',response_model=list[schemas.get_Persona])
 async def personas(skip:int=0,limit:int=100, db:Session=Depends(get_db)):
     personas = crud.get_personas(db=db,skip=skip,limit=limit)
     return personas
 
 
+@router.patch('/update/{id}',response_model=schemas.Persona)
+async def update_persona(persona:schemas.Persona,id,db:Session=Depends(get_db)):
+    persona_db = crud.update_persona(db, id, persona)
+    return persona_db
 
-@router.get('/get_personas')
-async def get_personas():
-    pass
+
+
     
+@router.delete('/delete/{id}',response_model=schemas.get_Persona)
+async def delete_persona(id,db:Session=Depends(get_db)):
+    person_db = crud.delete_persona(db,id)
+    if not person_db:
+        raise HTTPException(status_code=400, detail="Person not registered")
+    return person_db
+

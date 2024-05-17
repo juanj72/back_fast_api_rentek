@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,Field
 from datetime import datetime, date
 
 
@@ -6,7 +6,7 @@ from datetime import datetime, date
     
 class TaskBase(BaseModel):
     description_task: str
-    created_date: datetime
+    created_date: datetime = Field(default_factory=datetime.now)
     due_date: date
 
 class CreateTask(TaskBase):

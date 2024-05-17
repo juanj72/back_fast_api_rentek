@@ -21,10 +21,11 @@ class Persona(BaseModel):
     first_name: str
     last_name: str
     dni: int
-    taskss: list[GetTask]=[]
+    taskss: list[TaskBase]=[]
     class Config:
         orm_mode = True
 
 
 class get_Persona(Persona):
     idpersona: int
+    taskss: list[TaskBase]=[]

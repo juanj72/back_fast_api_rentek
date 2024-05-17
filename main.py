@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from typing import Union
-from views import main_view,persona_view
+from views import main_view,persona_view,tasks_view
 # from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -23,4 +23,5 @@ app = FastAPI()
 
 app.include_router(main_view.router,prefix='/api/v1')
 app.include_router(persona_view.router,prefix='/api/v1/Persona')
+app.include_router(tasks_view.router,prefix='/api/v1/tasks')
 

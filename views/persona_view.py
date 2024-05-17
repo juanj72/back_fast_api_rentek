@@ -38,8 +38,10 @@ async def personas(skip:int=0,limit:int=100, db:Session=Depends(get_db)):
 @router.patch('/update/{id}',response_model=schemas.Persona)
 async def update_persona(persona:schemas.Persona,id,db:Session=Depends(get_db)):
     persona_db = crud.update_persona(db, id, persona)
-    return persona_db
-
+    if persona_db:
+        return persona_db
+    else:
+        raise HTTPException(status_code=400, detail="Person not registered")
 
 
     

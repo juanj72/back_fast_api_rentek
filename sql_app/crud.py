@@ -3,6 +3,9 @@ from sqlalchemy.orm import Session
 from . import models, schemas
 
 
+### Personas Controllers
+
+
 def created_persona(db: Session, persona: schemas.Persona):
     
     db_user = models.Persona(first_name=persona.first_name, last_name = persona.last_name, dni=persona.dni)
@@ -26,11 +29,8 @@ def update_persona(db: Session, id: int, persona: schemas.Persona):
                 setattr(persona_db, attr, value)
         db.commit()
         db.refresh(persona_db)
-    return persona_db
+        return persona_db
   
-
-    
-
 def delete_persona(db: Session, id: int):
 
     persona_db = db.query(models.Persona).filter(models.Persona.idpersona == id).first()
@@ -42,3 +42,16 @@ def delete_persona(db: Session, id: int):
     else:
    
         return None  
+
+
+
+###tasks Controllers
+
+
+def create_task(db:Session,tasks:schemas.CreateTask,persona_id:int):
+    
+    db_tasks = models.tasks(**tasks.dict(),persona_id=persona_id )
+    db.add(db_tasks)
+    db.commit()
+    db.refresh(db_tasks)
+    return db_tasks

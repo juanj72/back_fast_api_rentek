@@ -1,0 +1,101 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Api_rentek",
+    "collectionId": "b84273fb-a880-4632-953f-17bbd3983cb5",
+    "dateExported": "2024-05-17T00:28:11.925Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "37d29ae8-b62b-4efd-b71d-017c013c4948",
+            "name": "persona",
+            "containerId": "",
+            "created": "2024-05-16T23:39:08.895Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "1b1ae160-5fde-417d-84f2-851b4f59b50e",
+            "name": "tasks",
+            "containerId": "",
+            "created": "2024-05-16T23:39:24.710Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "327e14a5-e880-45e5-87da-7c936f2dd82a",
+            "colId": "b84273fb-a880-4632-953f-17bbd3983cb5",
+            "containerId": "37d29ae8-b62b-4efd-b71d-017c013c4948",
+            "name": "add persona.",
+            "url": "http://127.0.0.1:8000/api/v1/Persona/add",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-16T17:16:28.561Z",
+            "modified": "2024-05-16T23:38:39.985Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"first_name\": \"pepe\",\n  \"last_name\": \"perez\",\n  \"dni\": 213647\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "021c0366-1d84-4499-906c-e4e66aeceaf0",
+            "colId": "b84273fb-a880-4632-953f-17bbd3983cb5",
+            "containerId": "37d29ae8-b62b-4efd-b71d-017c013c4948",
+            "name": "get personas",
+            "url": "http://127.0.0.1:8000/api/v1/Persona/all",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-05-16T18:56:21.892Z",
+            "modified": "2024-05-16T19:11:51.344Z",
+            "headers": []
+        },
+        {
+            "_id": "1b45ad8a-58cc-459a-875d-3c83e4bd29b5",
+            "colId": "b84273fb-a880-4632-953f-17bbd3983cb5",
+            "containerId": "37d29ae8-b62b-4efd-b71d-017c013c4948",
+            "name": "update persona",
+            "url": "http://127.0.0.1:8000/api/v1/Persona/update/15",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2024-05-16T20:01:57.153Z",
+            "modified": "2024-05-16T22:59:16.955Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"first_name\": \"luis\",\n  \"last_name\": \"niño\",\n  \"dni\": 2147483647\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "8ff5f7ba-ed98-4726-8060-ff7fb1aa1078",
+            "colId": "b84273fb-a880-4632-953f-17bbd3983cb5",
+            "containerId": "37d29ae8-b62b-4efd-b71d-017c013c4948",
+            "name": "delete persona",
+            "url": "http://127.0.0.1:8000/api/v1/Persona/delete/11",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-05-16T20:55:59.430Z",
+            "modified": "2024-05-16T21:36:43.345Z",
+            "headers": []
+        },
+        {
+            "_id": "84afb5cb-5841-425d-9703-4de438a63752",
+            "colId": "b84273fb-a880-4632-953f-17bbd3983cb5",
+            "containerId": "1b1ae160-5fde-417d-84f2-851b4f59b50e",
+            "name": "create tasks",
+            "url": "http://127.0.0.1:8000/api/v1/tasks/1/create",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-16T23:39:33.118Z",
+            "modified": "2024-05-17T00:16:09.583Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"description_task\": \"Presentar Api a camilo pinilla \",\r\n  \r\n  \"due_date\": \"2024-05-17\"\r\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "MaPKLUO1V_xjt76IEx-No0mmcgYp7pvpX6JpvCMxGyVgdOSoN3UFZaiNA_lGoyeslQcQak9ldxcbnVTeaoECfQ"
+}

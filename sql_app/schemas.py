@@ -23,7 +23,7 @@ class Persona(BaseModel):
     dni: int
     taskss: list[TaskBase]=[]
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class get_Persona(Persona):
